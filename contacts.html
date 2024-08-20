@@ -17,27 +17,6 @@
             height: 100vh;
         }
 
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .tab {
-            padding: 10px 20px;
-            margin: 0 10px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .tab:hover,
-        .tab.active {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
 
         .login-container {
             width: 100%;
@@ -94,7 +73,7 @@
         .input-group input:not(:placeholder-shown) + label,
         .input-group textarea:focus + label,
         .input-group textarea:not(:placeholder-shown) + label {
-            top: -10px;
+            top: -20px;
             font-size: 12px;
             color: #ff7e5f;
         }
@@ -108,6 +87,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+           
             transition: background-color 0.3s ease;
             position: relative;
         }
@@ -141,6 +121,13 @@
             animation: fadeIn 0.5s ease-in-out forwards;
         }
 
+        .mess
+        {
+            
+            margin-top:13px;
+
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -152,25 +139,22 @@
     </style>
 </head>
 <body>
-    <div class="tabs">
-        <a href="index.html" class="tab">Sign In</a>
-        <a href="signup.html" class="tab">Sign Up</a>
-    </div>
+   
     <div class="login-container">
         <div class="login-box">
             <h2>Contact Us</h2>
             <form id="contact-form">
                 <div class="input-group">
                     <input type="text" required placeholder=" " id="name">
-                    <label for="name">Name</label>
+                    <label for="name" class="mess">Name</label>
                 </div>
                 <div class="input-group">
                     <input type="email" required placeholder=" " id="email">
-                    <label for="email">Email</label>
+                    <label for="email" class="mess">Email</label>
                 </div>
                 <div class="input-group">
                     <textarea rows="5" required placeholder=" " id="message"></textarea>
-                    <label for="message">Message</label>
+                    <label for="message" class="mess">Message</label>
                 </div>
                 <button type="submit" class="login-btn"><span>Send</span></button>
             </form>
