@@ -3,53 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlackForest</title>
-    <link rel="stylesheet" href="blackforest.css">
+    <title>Cart</title>
     <link rel="stylesheet" href="car.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+
+#cart-items {
+    width: 80%;
+    height: 500px;
+    margin: 20px auto; /* Center the box */
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(205, 129, 31); /* Catchy color */
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 180px; /* Minimum height */
+    font-weight:100;
+    font-size: large;
+}
+
+/* Hover effect for the cart items box */
+#cart-items:hover {
+    background-color: rgb(255, 179, 71); /* Lighter, catchy color on hover */
+    transform: scale(1.05); /* Slightly enlarge the box */
+}
+
+/* Style for each cart item */
+.cart-item {
+    padding: 10px;
+    border-bottom: 1px solid #fff; 
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the remove button */
+.cart-item .btn-danger {
+    margin-top: 5px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #cart-items {
+        width: 95%; /* Adjust width for smaller screens */
+    }
+}
+
+/* Ensure that items do not overflow and box adjusts height */
+#cart-items {
+
+    display: flex;
+    overflow-y: auto; /* Scroll if items overflow */
+    flex-direction: column;
+    max-height: 90%; 
+}
+
+    </style>
 </head>
 <body>
-    <section id="black">
-        <div class="container">
-            <h2 class="text-center">BLACK FOREST</h2>
-            <div class="row">
-                <!-- Cake Cards -->
-                <!-- Repeatable Cake Card Template -->
-                <div class="col-lg-6">
-                  <div class="card yum">
-                    <img class="card-img-top yum-ig" src="images/blackforest classic(1).jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <p class="card-text text-center yum-t">CLASSIC BLACK FOREST</p>
-                      <p class="yum-rate">Rs.2000</p>
-                      <button class="addtocart" data-name="CLASSIC BLACK FOREST" data-price="2000">
-                        <div class="pretext">
-                          <i class="fa fa-shopping-cart"></i> ADD TO CART
-                        </div>
-                        <div class="pretext done">
-                          <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <!-- Repeat for each product -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Section -->
-    <section id="cart">
-        <div class="container">
-            <h2 class="text-center">Your Cart</h2>
-            <div id="cart-items">
-                <p class="text-center">Your cart is empty.</p>
-            </div>
-            <div class="text-center">
-                <button id="checkout-btn" class="btn btn-success" style="display: none;">Proceed to Checkout</button>
-            </div>
-        </div>
-    </section>
+    <div id="cart-items">
+<button id="checkout-btn" style="display:none;">Checkout</button>
+</div>
 
     <script src="ca.js"></script>
 </body>
