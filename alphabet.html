@@ -27,18 +27,52 @@
               <p class="card-text text-center alp-t">Alpahbet A </p>
               <p class="alp-rate"> Rs.2000</p>
               <button class="addtocart"
-              data-product-id="12"
-    data-product-name="ALPHABET A"
-    data-product-price="2000">
-                <div class="pretext">
-                  <i class="fa fa-shopping-cart"></i> ADD TO CART
-                </div>
-                
-                <div class="pretext done">
-                  <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-                </div>
-                
-              </button>
+        data-product-id="12"
+        data-product-name="ALPHABET A"
+        data-product-price="2000"
+        onclick="addToCart(this)">
+    <div class="pretext">
+        <i class="fa fa-shopping-cart"></i> ADD TO CART
+    </div>
+    <div class="pretext done">
+        <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
+    </div>
+</button>
+
+<script>
+    function addToCart(button) {
+        const productId = button.getAttribute('data-product-id');
+        const productName = button.getAttribute('data-product-name');
+        const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+        const productData = {
+            productId: productId,
+            productName: productName,
+            productPrice: productPrice
+        };
+
+        // Send the product data to the backend
+        fetch('http://localhost:3000/add-to-cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productData),
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Product added to cart successfully!');
+                // Update the button text to indicate the product has been added
+                button.querySelector('.posttext').style.display = 'block';
+                button.querySelector('.pretext').style.display = 'none';
+            } else {
+                alert('Failed to add product to cart');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
              
             </div>
         </div>
@@ -57,18 +91,52 @@
         <p class="card-text text-center alp-t">Alpahbet B </p>
         <p class="alp-rate"> Rs.2000</p>
         <button class="addtocart"
-        data-product-id="13"
-    data-product-name="ALPHABET B"
-    data-product-price="2000">
-          <div class="pretext">
-            <i class="fa fa-shopping-cart"></i> ADD TO CART
-          </div>
-          
-          <div class="pretext done">
-            <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-          </div>
-          
-        </button>
+        data-product-id="23"
+        data-product-name="ALPHABET B"
+        data-product-price="2000"
+        onclick="addToCart(this)">
+    <div class="pretext">
+        <i class="fa fa-shopping-cart"></i> ADD TO CART
+    </div>
+    <div class="pretext done">
+        <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
+    </div>
+</button>
+
+<script>
+    function addToCart(button) {
+        const productId = button.getAttribute('data-product-id');
+        const productName = button.getAttribute('data-product-name');
+        const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+        const productData = {
+            productId: productId,
+            productName: productName,
+            productPrice: productPrice
+        };
+
+        // Send the product data to the backend
+        fetch('http://localhost:3000/add-to-cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productData),
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Product added to cart successfully!');
+                // Update the button text to indicate the product has been added
+                button.querySelector('.posttext').style.display = 'block';
+                button.querySelector('.pretext').style.display = 'none';
+            } else {
+                alert('Failed to add product to cart');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
        
       </div>
   </div>
@@ -89,16 +157,49 @@
     <button class="addtocart"
     data-product-id="14"
     data-product-name="ALPHABET E"
-    data-product-price="2000">
-      <div class="pretext">
-        <i class="fa fa-shopping-cart"></i> ADD TO CART
-      </div>
-      
-      <div class="pretext done">
-        <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-      </div>
-      
-    </button>
+    data-product-price="2000"
+    onclick="addToCart(this)">
+<div class="pretext">
+    <i class="fa fa-shopping-cart"></i> ADD TO CART
+</div>
+<div class="pretext done">
+    <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
+</div>
+</button>
+
+<script>
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+    const productData = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice
+    };
+
+    // Send the product data to the backend
+    fetch('http://localhost:3000/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Product added to cart successfully!');
+            // Update the button text to indicate the product has been added
+            button.querySelector('.posttext').style.display = 'block';
+            button.querySelector('.pretext').style.display = 'none';
+        } else {
+            alert('Failed to add product to cart');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
    
   </div>
 </div>
@@ -120,16 +221,49 @@
     <button class="addtocart"
     data-product-id="15"
     data-product-name="ALPHABET G"
-    data-product-price="2000">
-      <div class="pretext">
-        <i class="fa fa-shopping-cart"></i> ADD TO CART
-      </div>
-      
-      <div class="pretext done">
-        <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-      </div>
-      
-    </button>
+    data-product-price="2000"
+    onclick="addToCart(this)">
+<div class="pretext">
+    <i class="fa fa-shopping-cart"></i> ADD TO CART
+</div>
+<div class="pretext done">
+    <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
+</div>
+</button>
+
+<script>
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+    const productData = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice
+    };
+
+    // Send the product data to the backend
+    fetch('http://localhost:3000/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Product added to cart successfully!');
+            // Update the button text to indicate the product has been added
+            button.querySelector('.posttext').style.display = 'block';
+            button.querySelector('.pretext').style.display = 'none';
+        } else {
+            alert('Failed to add product to cart');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
    
   </div>
 </div>
@@ -148,18 +282,51 @@
 <p class="card-text text-center alp-t">Alpahbet N </p>
 <p class="alp-rate"> Rs.2000</p>
 <button class="addtocart"
-data-product-id="16"
+    data-product-id="16"
     data-product-name="ALPHABET N"
-    data-product-price="2000">
-  <div class="pretext">
+    data-product-price="2000"
+    onclick="addToCart(this)">
+<div class="pretext">
     <i class="fa fa-shopping-cart"></i> ADD TO CART
-  </div>
-  
-  <div class="pretext done">
+</div>
+<div class="pretext done">
     <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-  </div>
-  
+</div>
 </button>
+
+<script>
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+    const productData = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice
+    };
+
+    // Send the product data to the backend
+    fetch('http://localhost:3000/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Product added to cart successfully!');
+            // Update the button text to indicate the product has been added
+            button.querySelector('.posttext').style.display = 'block';
+            button.querySelector('.pretext').style.display = 'none';
+        } else {
+            alert('Failed to add product to cart');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 
 </div>
 </div>
@@ -178,18 +345,51 @@ data-product-id="16"
 <p class="card-text text-center alp-t">Alpahbet S </p>
 <p class="alp-rate"> Rs.2000</p>
 <button class="addtocart"
-data-product-id="17"
+    data-product-id="17"
     data-product-name="ALPHABET S"
-    data-product-price="2000">
-  <div class="pretext">
+    data-product-price="2000"
+    onclick="addToCart(this)">
+<div class="pretext">
     <i class="fa fa-shopping-cart"></i> ADD TO CART
-  </div>
-  
-  <div class="pretext done">
+</div>
+<div class="pretext done">
     <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-  </div>
-  
+</div>
 </button>
+
+<script>
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+    const productData = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice
+    };
+
+    // Send the product data to the backend
+    fetch('http://localhost:3000/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Product added to cart successfully!');
+            // Update the button text to indicate the product has been added
+            button.querySelector('.posttext').style.display = 'block';
+            button.querySelector('.pretext').style.display = 'none';
+        } else {
+            alert('Failed to add product to cart');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 
 </div>
 </div>
@@ -210,18 +410,51 @@ data-product-id="17"
 <p class="card-text text-center alp-t">Alpahbet D </p>
 <p class="alp-rate"> Rs.2000</p>
 <button class="addtocart"
-data-product-id="18"
+    data-product-id="18"
     data-product-name="ALPHABET D"
-    data-product-price="2000">
-  <div class="pretext">
+    data-product-price="2000"
+    onclick="addToCart(this)">
+<div class="pretext">
     <i class="fa fa-shopping-cart"></i> ADD TO CART
-  </div>
-  
-  <div class="pretext done">
+</div>
+<div class="pretext done">
     <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-  </div>
-  
+</div>
 </button>
+
+<script>
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+    const productData = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice
+    };
+
+    // Send the product data to the backend
+    fetch('http://localhost:3000/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Product added to cart successfully!');
+            // Update the button text to indicate the product has been added
+            button.querySelector('.posttext').style.display = 'block';
+            button.querySelector('.pretext').style.display = 'none';
+        } else {
+            alert('Failed to add product to cart');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 
 </div>
 </div>
@@ -240,18 +473,51 @@ data-product-id="18"
 <p class="card-text text-center alp-t">Alpahbet J </p>
 <p class="alp-rate"> Rs.2000</p>
 <button class="addtocart"
-data-product-id="19"
+    data-product-id="19"
     data-product-name="ALPHABET J"
-    data-product-price="2000">
-  <div class="pretext">
+    data-product-price="2000"
+    onclick="addToCart(this)">
+<div class="pretext">
     <i class="fa fa-shopping-cart"></i> ADD TO CART
-  </div>
-  
-  <div class="pretext done">
+</div>
+<div class="pretext done">
     <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-  </div>
-  
+</div>
 </button>
+
+<script>
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+    const productData = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice
+    };
+
+    // Send the product data to the backend
+    fetch('http://localhost:3000/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Product added to cart successfully!');
+            // Update the button text to indicate the product has been added
+            button.querySelector('.posttext').style.display = 'block';
+            button.querySelector('.pretext').style.display = 'none';
+        } else {
+            alert('Failed to add product to cart');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 
 </div>
 </div>
@@ -270,18 +536,51 @@ data-product-id="19"
 <p class="card-text text-center alp-t">Alpahbet V </p>
 <p class="alp-rate"> Rs.2000</p>
 <button class="addtocart"
-data-product-id="20"
+    data-product-id="20"
     data-product-name="ALPHABET V"
-    data-product-price="2000">
-  <div class="pretext">
+    data-product-price="2000"
+    onclick="addToCart(this)">
+<div class="pretext">
     <i class="fa fa-shopping-cart"></i> ADD TO CART
-  </div>
-  
-  <div class="pretext done">
+</div>
+<div class="pretext done">
     <div class="posttext"><i class="fa fa-check"></i> ADDED</div>
-  </div>
-  
+</div>
 </button>
+
+<script>
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = parseInt(button.getAttribute('data-product-price'));
+
+    const productData = {
+        productId: productId,
+        productName: productName,
+        productPrice: productPrice
+    };
+
+    // Send the product data to the backend
+    fetch('http://localhost:3000/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Product added to cart successfully!');
+            // Update the button text to indicate the product has been added
+            button.querySelector('.posttext').style.display = 'block';
+            button.querySelector('.pretext').style.display = 'none';
+        } else {
+            alert('Failed to add product to cart');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 
 </div>
 </div>
